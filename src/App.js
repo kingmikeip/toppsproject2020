@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import LoginPage from './Components/LoginPage';
+import DisplayPage from './Components/DisplayPage';
+import ShowAllCards from './Components/ShowAllCards';
+import 'antd/dist/antd.css';
+/**
+ * Login page ->
+ * Default display my collection
+ * Show all cards
+ * Sort by artist, player name, number range, specific number, print run range
+ * Add notes
+ * Add / Remove Card
+ * Wishlist
+ */
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <DisplayPage/> */}
+      <ShowAllCards/>
     </div>
   );
 }
