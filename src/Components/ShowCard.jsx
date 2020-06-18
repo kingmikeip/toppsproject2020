@@ -11,18 +11,22 @@ export default function ShowCard(props) {
         },
         boxstyle: {
             border: "1px solid pink",
-            width: "100%"
+            width: "100%",
+            minWidth: "300px"
         },
         boxstyletext:{
             border: "1px solid grey",
-            width: "50%"
+            width: "50%",
+            height: "80px"
         },
         flexrow: {
             display: "flex",
             flexDirection: "row"
         },
         textstyle: {
-            margin: "3px"
+            padding: "0",
+            margin: "0 0 0 2px",
+            color: "green"
         },
         containerstyle: {
             margin: "2px"
