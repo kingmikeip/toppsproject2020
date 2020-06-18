@@ -196,7 +196,7 @@ export default function ShowAllCards() {
                     Show All Cards
 
                 </Button>
-                <Button>
+                <Button disabled>
                     Show My Cards
                 </Button>
                 <Dropdown overlay={menu}>
