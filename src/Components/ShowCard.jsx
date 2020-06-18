@@ -26,7 +26,7 @@ export default function ShowCard(props) {
         textstyle: {
             padding: "0",
             margin: "0 0 0 2px",
-            color: "green"
+            color: "black"
         },
         containerstyle: {
             margin: "2px"
