@@ -24,12 +24,12 @@ Remove Card
 Edit Details
  */
 
-const onClick = ({ key }) => {
+const onMenuClick = ({ key }) => {
     console.log(`${key}`)
 };
 
 const menu = (
-    <Menu onClick={onClick}>
+    <Menu onClick={onMenuClick}>
         <Menu.Item key="1">Card Number</Menu.Item>
         <Menu.Item key="2">Artist</Menu.Item>
         <Menu.Item key="3">Player</Menu.Item>

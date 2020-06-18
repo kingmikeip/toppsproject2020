@@ -5,15 +5,15 @@ import 'antd/dist/antd.css';
 export default function LoginPage() {
     const layout = {
         labelCol: {
-            span: 6,
+            span: 9,
         },
         wrapperCol: {
-            span: 8,
+            span: 6,
         },
     };
     const tailLayout = {
         wrapperCol: {
-            offset: 6,
+            offset: 9,
             span: 16,
         },
     };
@@ -69,8 +69,9 @@ export default function LoginPage() {
 
                 <Form.Item {...tailLayout}>
                     <Button type="primary" htmlType="submit">
-                        Submit
-                </Button>
+                        Log In
+                    </Button>
+                    <p>Or <a href="">register now!</a></p>
                 </Form.Item>
             </Form>
         </div>

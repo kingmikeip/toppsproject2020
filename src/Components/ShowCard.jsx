@@ -6,8 +6,8 @@ export default function ShowCard(props) {
 
     const style = {
         imgstyle: {
-            height: "400px",
-            width: "400px"
+            height: props.picSize,
+            width: props.picSize
         },
         boxstyle: {
             border: "1px solid pink",

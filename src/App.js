@@ -2,6 +2,8 @@ import React from 'react';
 import LoginPage from './Components/LoginPage';
 import DisplayPage from './Components/DisplayPage';
 import ShowAllCards from './Components/ShowAllCards';
+import Splash from './Components/Splash';
+import AdminPage from './Components/AdminPage';
 import 'antd/dist/antd.css';
 /**
  * Login page ->
@@ -16,8 +18,11 @@ import 'antd/dist/antd.css';
 function App() {
   return (
     <div className="App">
+      {/* <Splash />
+      <LoginPage /> */}
       {/* <DisplayPage/> */}
       <ShowAllCards/>
+      {/* <AdminPage /> */}
     </div>
   );
 }
