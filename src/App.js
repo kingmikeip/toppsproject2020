@@ -4,6 +4,7 @@ import DisplayPage from './Components/DisplayPage';
 import ShowAllCards from './Components/ShowAllCards';
 import Splash from './Components/Splash';
 import AdminPage from './Components/AdminPage';
+import {Route} from 'react-router-dom'
 import 'antd/dist/antd.css';
 /**
  * Login page ->
@@ -13,6 +14,18 @@ import 'antd/dist/antd.css';
  * Add notes
  * Add / Remove Card
  * Wishlist
+ * React Router with admin page
+ */
+
+
+/** Things to add
+ * Start page
+ * Add to my collection
+ * Wish list
+ * In hand check box
+ * route for admin page
+ * mobile responsiveness
+ * card number search
  */
 
 function App() {
@@ -21,8 +34,13 @@ function App() {
       {/* <Splash />
       <LoginPage /> */}
       {/* <DisplayPage/> */}
-      <ShowAllCards/>
+      {/* <ShowAllCards/> */}
       {/* <AdminPage /> */}
+
+        <Route exact path="/" component={ShowAllCards} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/adminap" component={AdminPage} />
+
     </div>
   );
 }

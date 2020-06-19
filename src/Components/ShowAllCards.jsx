@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Menu, Dropdown, Button } from 'antd';
-import ShowCard from './ShowCard'
+import ShowCard from './ShowCard';
+import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 const { SubMenu } = Menu;
 // let APIUrl = 'http://localhost:3000/cards';
@@ -13,7 +14,7 @@ export default function ShowAllCards() {
     const [cardData, setCardData] = useState([]);
     const [APIUrl, setAPIUrl] = useState(herokuUrl);
     const [sortBy, setSortBy] = useState('cardnum'); // card num or print run
-    const [picSize,setPicSize] = useState('400px');
+    const [picSize, setPicSize] = useState('400px');
 
     const style = {
         imgsize: {
@@ -27,6 +28,21 @@ export default function ShowAllCards() {
         },
         buttondiv: {
             margin: "10px"
+        },
+        topdiv: {
+            display: "flex",
+            flexDirection: "row"
+        },
+        rightdiv: {
+            display: "flex",
+            justifyContent: "flex-end",
+            width: "30%"
+        },
+        leftdiv: {
+            display: "flex",
+            justifyContent: "flex-start",
+            width: "70%"
+
         }
     }
 
@@ -70,19 +86,19 @@ export default function ShowAllCards() {
         getCards();
     }, [APIUrl, sortBy])
 
-    const onSizeMenuClick = ({key}) => {
+    const onSizeMenuClick = ({ key }) => {
         console.log(`${key}`);
         switch (key) {
-            case 'small':       setPicSize('200px');
-                                break;
-            case 'medium:':     setPicSize('400px');
-                                break;
-            case 'large':       setPicSize('600px');
-                                break;
-            case 'list':        setPicSize('0px');
-                                break;
-            default:            setPicSize('400px');
-                                break;
+            case 'small': setPicSize('200px');
+                break;
+            case 'medium:': setPicSize('400px');
+                break;
+            case 'large': setPicSize('600px');
+                break;
+            case 'list': setPicSize('0px');
+                break;
+            default: setPicSize('400px');
+                break;
         }
     }
 
@@ -125,9 +141,9 @@ export default function ShowAllCards() {
         }
     };
 
-    // const onTitleClick = ({ key }) => {
-    //     console.log('Title')
-    // }
+    const onLoginClick = () => {
+        console.log('Login')
+    }
 
     const menu = (
         <Menu onClick={onMenuClick}>
@@ -191,38 +207,49 @@ export default function ShowAllCards() {
 
     return (
         <>
-            <div style={style.buttondiv}>
-                <Button onClick={() => { setAPIUrl(herokuUrl) }}>
-                    Show All Cards
+            <div style={style.topdiv}>
 
-                </Button>
-                <Button disabled>
-                    Show My Cards
-                </Button>
-                <Dropdown overlay={menu}>
-                    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                <div style={{ ...style.buttondiv, ...style.leftdiv }}>
+                    <Button onClick={() => { setAPIUrl(herokuUrl) }}>
+                        Show All Cards
+
+                    </Button>
+                    <Button disabled>
+                        Show My Cards
+                    </Button>
+                    <Dropdown overlay={menu}>
+                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                            <Button>
+                                Sort By
+                        </Button>
+                        </a>
+                    </Dropdown>
+                    <Dropdown overlay={sizeMenu}>
+                        <a onClick={e => e.preventDefault()}>
+                            <Button>
+                                Pic Size
+                            </Button>
+                        </a>
+                    </Dropdown>
+
+                </div>
+
+                <div style={{ ...style.buttondiv, ...style.rightdiv }}>
+                    <a onClick={onLoginClick}>
                         <Button>
-                            Sort By
+                            Login
                         </Button>
                     </a>
-                </Dropdown>
-                <Dropdown overlay={sizeMenu}>
-                    <a onClick={e => e.preventDefault()}>
-                        <Button>
-                            Pic Size
-                        </Button>
-                    </a>
-                </Dropdown>
+                </div>
 
             </div>
-
-
+            {/* Beginning of card display */}
 
             <div style={style.boxstyle}>
                 {cardData.map(card => {
                     return (
                         <>
-                            <ShowCard card={card} showPlayer={showPlayer} showArtist={showArtist} picSize={picSize}/>
+                            <ShowCard card={card} showPlayer={showPlayer} showArtist={showArtist} picSize={picSize} />
                         </>
                     )
                 })}
