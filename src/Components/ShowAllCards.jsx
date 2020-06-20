@@ -236,7 +236,7 @@ export default function ShowAllCards() {
 
                 <div style={{ ...style.buttondiv, ...style.rightdiv }}>
                     <a onClick={onLoginClick}>
-                        <Button>
+                        <Button disabled>
                             Login
                         </Button>
                     </a>

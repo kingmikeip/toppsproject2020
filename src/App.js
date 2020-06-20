@@ -26,6 +26,7 @@ import 'antd/dist/antd.css';
  * route for admin page
  * mobile responsiveness
  * card number search
+ * total pr for artist or player
  */
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
         <Route exact path="/" component={ShowAllCards} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/adminap" component={AdminPage} />
-
+      {/* Profile Page */}
     </div>
   );
 }
