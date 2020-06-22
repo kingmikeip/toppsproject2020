@@ -37,3 +37,6 @@ Features coming soon
 * Ebay prices
 * Links to ebay auctions
 * Update print runs  
+* Add about page 
+* Add donate page
+* Add contact page
